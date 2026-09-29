@@ -3,310 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7frostt | Senior Roblox & Full-Stack Architect</title>
+    <title>7frostt | Developer Portfolio</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --bg-dark: #0b0f19;
             --panel-bg: rgba(15, 23, 42, 0.65);
-            --cyan-accent: #38bdf8;
-            --blue-accent: #60a5fa;
             --border-glow: rgba(56, 189, 248, 0.2);
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Glassmorphism card styles */
-        .glass-panel {
-            background: var(--panel-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        .glass-panel:hover {
-            border-color: var(--border-glow);
-        }
-
-        .glass-nav {
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Frost glow text effects */
-        .text-glow {
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 0 40px rgba(96, 165, 250, 0.3);
-        }
-
-        .border-glow {
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
-        }
-
-        /* Custom Cyber Grid Background */
-        .cyber-grid {
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #080c14;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #38bdf8;
-        }
-
-        /* Glowing Pulse Animation */
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-        .animate-pulse-glow {
-            animation: pulseGlow 4s infinite ease-in-out;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: #e2e8f0; overflow-x: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        .glass-panel:hover { border-color: var(--border-glow); }
+        .glass-nav { background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-glow { text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 0 40px rgba(96, 165, 250, 0.3); }
+        .cyber-grid { background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%), linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 100% 100%, 40px 40px, 40px 40px; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #080c14; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
     </style>
 </head>
 <body class="cyber-grid antialiased selection:bg-sky-500 selection:text-slate-950 min-h-screen flex flex-col">
 
-    <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand Logo -->
             <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
-                    7f
-                </div>
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg group-hover:scale-105 transition-transform">7f</div>
                 <span class="font-mono text-xl font-bold tracking-tight text-white group-hover:text-sky-400 transition-colors">
-                    7frostt<span class="text-sky-400">.io</span>
+                    <span id="nav-handle">7frostt</span><span class="text-sky-400">.io</span>
                 </span>
             </a>
 
-            <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#about" class="text-slate-300 hover:text-sky-400 transition-colors flex items-center space-x-1">
-                    <span class="text-sky-400 font-mono text-xs">01.</span>
-                    <span>About</span>
-                </a>
-                <a href="#skills" class="text-slate-300 hover:text-sky-400 transition-colors flex items-center space-x-1">
-                    <span class="text-sky-400 font-mono text-xs">02.</span>
-                    <span>Skills</span>
-                </a>
-                <a href="#projects" class="text-slate-300 hover:text-sky-400 transition-colors flex items-center space-x-1">
-                    <span class="text-sky-400 font-mono text-xs">03.</span>
-                    <span>Projects</span>
-                </a>
-                <a href="#terminal" class="text-slate-300 hover:text-sky-400 transition-colors flex items-center space-x-1">
-                    <span class="text-sky-400 font-mono text-xs">04.</span>
-                    <span>CLI Terminal</span>
-                </a>
-                <a href="#contact" class="text-slate-300 hover:text-sky-400 transition-colors flex items-center space-x-1">
-                    <span class="text-sky-400 font-mono text-xs">05.</span>
-                    <span>Contact</span>
-                </a>
+                <a href="#about" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">01.</span> About</a>
+                <a href="#skills" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">02.</span> Skills</a>
+                <a href="#projects" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">03.</span> Projects</a>
+                <a href="#terminal" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">04.</span> Terminal</a>
+                <a href="#contact" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">05.</span> Contact</a>
             </nav>
 
-            <!-- Status Badge & Copy BTN -->
             <div class="hidden sm:flex items-center space-x-3">
                 <div class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span>Open to Builds</span>
+                    <span id="nav-status">Open to Builds</span>
                 </div>
-                <button onclick="copyGithubUrl()" class="p-2 rounded-xl glass-panel hover:bg-slate-800 text-slate-300 hover:text-sky-400 transition-all text-sm" title="Copy GitHub URL">
+                <button onclick="copyGithubUrl()" class="p-2 rounded-xl glass-panel hover:bg-slate-800 text-slate-300 hover:text-sky-400 transition-all text-sm">
                     <i class="fa-brands fa-github text-lg"></i>
                 </button>
             </div>
 
-            <!-- Mobile Hamburger Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Container -->
         <div id="mobile-menu" class="hidden md:hidden glass-nav border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400 font-medium">01. About</a>
-            <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400 font-medium">02. Skills</a>
-            <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400 font-medium">03. Projects</a>
-            <a href="#terminal" class="block py-2 text-slate-300 hover:text-sky-400 font-medium">04. CLI Terminal</a>
-            <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400 font-medium">05. Contact</a>
+            <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">01. About</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">02. Skills</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">03. Projects</a>
+            <a href="#terminal" class="block py-2 text-slate-300 hover:text-sky-400">04. Terminal</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">05. Contact</a>
         </div>
     </header>
 
     <main class="flex-grow">
-        <section id="about" class="relative pt-16 pb-24 lg:pt-28 lg:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Glowing Background Accent Spheres -->
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
-            <div class="absolute top-1/3 right-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Hero Section -->
+        <section id="about" class="relative pt-16 pb-24 lg:pt-28 lg:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-sky-500/30 text-sky-300 text-xs sm:text-sm font-mono mb-8">
+                <span>❄️</span> <span>System Online &bull; Welcome to my Workspace</span>
+            </div>
 
-            <div class="relative z-10 flex flex-col items-center text-center">
-                <!-- Status Tag -->
-                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-sky-500/30 text-sky-300 text-xs sm:text-sm font-mono mb-8 shadow-inner">
-                    <span class="text-sky-400">❄️</span>
-                    <span>System Online &bull; Welcome to my Workspace</span>
-                </div>
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white mb-6">
+                Hi, I'm <span id="hero-handle" class="bg-gradient-to-r from-white via-sky-300 to-sky-500 bg-clip-text text-transparent text-glow">7frostt</span>
+            </h1>
 
-                <!-- Main Name Headline -->
-                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6">
-                    Hi, I'm <span class="bg-gradient-to-r from-white via-sky-300 to-sky-500 bg-clip-text text-transparent text-glow">7frostt</span>
-                </h1>
+            <p id="hero-title" class="text-lg sm:text-2xl text-slate-300 font-medium max-w-3xl mx-auto mb-4"></p>
+            <p id="hero-bio" class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-10"></p>
 
-                <!-- Professional Title -->
-                <p class="text-lg sm:text-2xl text-slate-300 font-medium max-w-3xl mb-4">
-                    Senior <span class="text-sky-400 font-semibold">Roblox Engine Specialist</span> &amp; <span class="text-blue-400 font-semibold">Full-Stack Web Developer</span>
-                </p>
-
-                <!-- Brief Bio Paragraph -->
-                <p class="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed mb-10">
-                    Known locally as <span class="text-slate-200 font-semibold">Al</span>. Crafting scalable client-server frameworks, custom physics, data systems in Luau, alongside production web systems with Laravel, PHP, MySQL, and Tailwind.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-slate-950 font-bold text-sm shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center space-x-2">
-                        <span>Explore Projects</span>
-                        <i class="fa-solid fa-arrow-down text-xs"></i>
-                    </a>
-                    <a href="#terminal" class="px-7 py-3.5 rounded-xl glass-panel text-slate-200 hover:text-sky-400 font-mono text-sm border border-slate-700 hover:border-sky-500/50 hover:bg-slate-800/80 active:scale-95 transition-all duration-200 flex items-center space-x-2">
-                        <i class="fa-solid fa-terminal text-sky-400"></i>
-                        <span>Launch Terminal</span>
-                    </a>
-                    <button onclick="copyGithubUrl()" class="px-5 py-3.5 rounded-xl glass-panel text-slate-400 hover:text-white text-sm border border-slate-800 hover:border-slate-700 active:scale-95 transition-all duration-200 flex items-center space-x-2" title="Copy GitHub Link">
-                        <i class="fa-regular fa-copy"></i>
-                        <span class="hidden sm:inline">Copy GitHub</span>
-                    </button>
-                </div>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-slate-950 font-bold text-sm shadow-lg hover:scale-105 transition-all">Explore Projects</a>
+                <a href="#terminal" class="px-7 py-3.5 rounded-xl glass-panel text-slate-200 hover:text-sky-400 font-mono text-sm border border-slate-700 hover:bg-slate-800 transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-terminal text-sky-400"></i>
+                    <span>Launch Terminal</span>
+                </a>
+                <button onclick="copyGithubUrl()" class="px-5 py-3.5 rounded-xl glass-panel text-slate-400 hover:text-white text-sm border border-slate-800 flex items-center space-x-2">
+                    <i class="fa-regular fa-copy"></i>
+                    <span class="hidden sm:inline">Copy GitHub</span>
+                </button>
             </div>
         </section>
 
+        <!-- Stats Counter -->
         <section class="border-y border-slate-800/80 bg-slate-950/40 py-10 my-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="space-y-1">
-                        <div class="text-3xl sm:text-4xl font-extrabold font-mono text-sky-400">15+</div>
-                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Production Builds</div>
-                    </div>
-                    <div class="space-y-1">
-                        <div class="text-3xl sm:text-4xl font-extrabold font-mono text-blue-400">120K+</div>
-                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Lines of Luau &amp; PHP</div>
-                    </div>
-                    <div class="space-y-1">
-                        <div class="text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">99.9%</div>
-                        <div class="text-xs sm:text-sm text-slate-400 font-medium">System Uptime Rate</div>
-                    </div>
-                    <div class="space-y-1">
-                        <div class="text-3xl sm:text-4xl font-extrabold font-mono text-indigo-400">3+ Yrs</div>
-                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Engineering Exp</div>
-                    </div>
-                </div>
+                <div id="stats-container" class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"></div>
             </div>
         </section>
 
-        <section id="skills" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col items-center text-center mb-16">
-                <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">// Technical Expertise</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold text-white">Core Skills &amp; Architecture</h3>
-                <div class="w-12 h-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full mt-4"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Skill Card 1: Roblox & Systems Engineering -->
-                <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6">
-                            <i class="fa-solid fa-gamepad"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3">Roblox Engine &amp; Luau</h4>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                            Custom Client-Server Frameworks, DataStore v2 persistence, Raycasting, Physics Simulations, and Network Buffer Optimization.
-                        </p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">Luau</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">DataStores</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">Client-Server</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">Custom Physics</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">Voxel Systems</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 2: Web & Full-Stack Backend -->
-                <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-2xl mb-6">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3">Full-Stack Web</h4>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                            Developing robust backend web applications with Laravel, PHP, RESTful APIs, MySQL databases, combined with sleek Tailwind UI architectures.
-                        </p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">Laravel (PHP)</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">MySQL</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">JavaScript</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">Tailwind CSS</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">REST APIs</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 3: Tools & Computer Vision -->
-                <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl mb-6">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3">Tools &amp; AI Scripting</h4>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                            Version control mastery with Git/GitHub, automation scripts in Python, desktop hand-tracking using MediaPipe, and XAMPP/Apache environments.
-                        </p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">Git &amp; GitHub</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">Python</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">MediaPipe</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">XAMPP</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">VS Code</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- Projects Section -->
         <section id="projects" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center text-center mb-12">
                 <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">// Featured Portfolio</h2>
@@ -314,159 +119,19 @@
                 <div class="w-12 h-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full mt-4"></div>
             </div>
 
-            <!-- Filter Buttons -->
+            <!-- Filters -->
             <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-                <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 bg-sky-500 text-slate-950 font-bold" data-filter="all">All Builds</button>
-                <button onclick="filterProjects('roblox')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 glass-panel text-slate-300 hover:text-sky-400" data-filter="roblox">Roblox Studio</button>
-                <button onclick="filterProjects('web')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 glass-panel text-slate-300 hover:text-sky-400" data-filter="web">Web Dev</button>
-                <button onclick="filterProjects('tools')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 glass-panel text-slate-300 hover:text-sky-400" data-filter="tools">Tools &amp; AI</button>
+                <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono bg-sky-500 text-slate-950 font-bold" data-filter="all">All Builds</button>
+                <button onclick="filterProjects('roblox')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="roblox">Roblox Studio</button>
+                <button onclick="filterProjects('web')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="web">Web Dev</button>
+                <button onclick="filterProjects('tools')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="tools">Tools &amp; AI</button>
             </div>
 
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Project 1: Sukarobot Web Portal -->
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="web">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono">Web Dev &bull; Internship</span>
-                            <a href="https://github.com/Rijalpratama23/web_sukarobot_sukabumi" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors">
-                                <i class="fa-brands fa-github text-lg"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">Web Sukarobot Sukabumi</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Full-stack web application developed for Sukarobot Sukabumi internship. Powered by Laravel 11, PHP, and MySQL database managing educational &amp; robotics catalog data.
-                        </p>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            <span class="text-xs font-mono text-slate-400">#Laravel</span>
-                            <span class="text-xs font-mono text-slate-400">#PHP8.3</span>
-                            <span class="text-xs font-mono text-slate-400">#MySQL</span>
-                            <span class="text-xs font-mono text-slate-400">#Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: 4rtifacts & Aether-Tide -->
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="roblox">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">Roblox Studio</span>
-                            <a href="https://github.com/7frostt" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors">
-                                <i class="fa-brands fa-github text-lg"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">4rtifacts &amp; Aether-Tide Engine</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Custom Roblox experiences featuring modular Luau client-server frameworks, optimized item replication, custom inventory data structures, and atmospheric combat mechanics.
-                        </p>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            <span class="text-xs font-mono text-slate-400">#Luau</span>
-                            <span class="text-xs font-mono text-slate-400">#DataStore2</span>
-                            <span class="text-xs font-mono text-slate-400">#CustomPhysics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Maison Co. Boutique -->
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="web">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono">Web Dev</span>
-                            <a href="https://github.com/7frostt" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors">
-                                <i class="fa-brands fa-github text-lg"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">Maison Co. Boutique Web</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            High-end modern boutique showcase site featuring smooth client-side filtering, animated UI transitions, responsive glassmorphism themes, and RESTful product routing.
-                        </p>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            <span class="text-xs font-mono text-slate-400">#JavaScript</span>
-                            <span class="text-xs font-mono text-slate-400">#HTML5</span>
-                            <span class="text-xs font-mono text-slate-400">#CSS3</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Roblox Digging System -->
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="roblox">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">Roblox Studio</span>
-                            <a href="https://github.com/7frostt" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors">
-                                <i class="fa-brands fa-github text-lg"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">Voxel Digging &amp; Physics Engine</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Procedural voxel terrain destruction and excavation mechanics. Optimized server-authoritative hitboxes and client-side particle interpolation for smooth performance.
-                        </p>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            <span class="text-xs font-mono text-slate-400">#Luau</span>
-                            <span class="text-xs font-mono text-slate-400">#Raycasting</span>
-                            <span class="text-xs font-mono text-slate-400">#Voxels</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Desktop AI Hand Tracking -->
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="tools">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-mono">Tools &amp; AI</span>
-                            <a href="https://github.com/7frostt" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors">
-                                <i class="fa-brands fa-github text-lg"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">Desktop AI Gesture &amp; Vision</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Real-time camera hand landmark tracking tool created with Python and Google MediaPipe. Enables gesture-based OS inputs and custom event listeners.
-                        </p>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            <span class="text-xs font-mono text-slate-400">#Python</span>
-                            <span class="text-xs font-mono text-slate-400">#MediaPipe</span>
-                            <span class="text-xs font-mono text-slate-400">#OpenCV</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Wasteline Solo Dev -->
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="roblox">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">Roblox Studio</span>
-                            <a href="https://github.com/7frostt" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors">
-                                <i class="fa-brands fa-github text-lg"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">Wasteline - Survival Project</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Solo survival game build with dynamic weather cycles, custom HUD interfaces, stamina &amp; hunger attributes, and server-side inventory security.
-                        </p>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            <span class="text-xs font-mono text-slate-400">#RobloxStudio</span>
-                            <span class="text-xs font-mono text-slate-400">#Luau</span>
-                            <span class="text-xs font-mono text-slate-400">#UI/UX</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Dynamic Project Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </section>
 
+        <!-- Terminal Section -->
         <section id="terminal" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center text-center mb-10">
                 <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">// Interactive Shell</h2>
@@ -474,102 +139,71 @@
                 <p class="text-slate-400 text-sm mt-2">Type <code class="text-sky-400 font-mono">help</code> or click commands to explore my bio directly.</p>
             </div>
 
-            <!-- Terminal Window Box -->
             <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl font-mono text-xs sm:text-sm">
-                <!-- Window Header Bar -->
                 <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
                     <div class="flex items-center space-x-2">
                         <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
                         <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
                         <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                        <span class="text-slate-400 text-xs ml-2">7frostt@laptop:~ (zsh)</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-slate-500 text-xs">
-                        <i class="fa-solid fa-terminal"></i>
-                        <span>v2.4.0</span>
+                        <span id="terminal-header-title" class="text-slate-400 text-xs ml-2">7frostt@laptop:~ (zsh)</span>
                     </div>
                 </div>
 
-                <!-- Terminal Console Body -->
                 <div id="terminal-body" class="p-5 h-80 overflow-y-auto space-y-3 bg-slate-950/80 text-slate-200">
                     <div class="text-slate-400">
-                        Welcome to <span class="text-sky-400 font-bold">7frostt OS v2026</span>. Type <span class="text-emerald-400 font-bold">help</span> to view available system commands.
+                        Welcome to <span class="text-sky-400 font-bold">7frostt OS v2026</span>. Type <span class="text-emerald-400 font-bold">help</span> to view commands.
                     </div>
                 </div>
 
-                <!-- Quick Action Prompt Buttons -->
                 <div class="px-4 py-2 bg-slate-900/50 border-t border-slate-800 flex flex-wrap gap-2 text-xs">
                     <span class="text-slate-500 py-1">Quick Run:</span>
-                    <button onclick="runTerminalCommand('whoami')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400">whoami</button>
-                    <button onclick="runTerminalCommand('skills')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400">skills</button>
-                    <button onclick="runTerminalCommand('projects')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400">projects</button>
-                    <button onclick="runTerminalCommand('contact')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400">contact</button>
-                    <button onclick="runTerminalCommand('clear')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-rose-400">clear</button>
+                    <button onclick="runTerminalCommand('whoami')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">whoami</button>
+                    <button onclick="runTerminalCommand('skills')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">skills</button>
+                    <button onclick="runTerminalCommand('projects')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">projects</button>
+                    <button onclick="runTerminalCommand('contact')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">contact</button>
+                    <button onclick="runTerminalCommand('clear')" class="px-2 py-0.5 rounded bg-slate-800 text-rose-400">clear</button>
                 </div>
 
-                <!-- Terminal Input Form -->
-                <form id="terminal-form" onsubmit="handleTerminalSubmit(event)" class="bg-slate-950 px-4 py-3 border-t border-slate-800 flex items-center space-x-2">
-                    <span class="text-emerald-400 font-bold">7frostt@laptop:~$</span>
-                    <input type="text" id="terminal-input" class="flex-grow bg-transparent border-none outline-none text-sky-300 font-mono text-sm placeholder-slate-600 focus:ring-0" placeholder="type a command here..." autocomplete="off">
+                <form onsubmit="handleTerminalSubmit(event)" class="bg-slate-950 px-4 py-3 border-t border-slate-800 flex items-center space-x-2">
+                    <span id="terminal-prompt" class="text-emerald-400 font-bold">7frostt@laptop:~$</span>
+                    <input type="text" id="terminal-input" class="flex-grow bg-transparent outline-none text-sky-300 font-mono text-sm placeholder-slate-600" placeholder="type a command here..." autocomplete="off">
                 </form>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+            <div class="glass-panel rounded-3xl p-8 sm:p-12">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
                         <span class="text-xs font-mono text-sky-400 uppercase tracking-widest">// Initiate Contact</span>
                         <h3 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Let's Build Something Exceptional</h3>
-                        <p class="text-slate-400 text-base leading-relaxed mb-8">
-                            Whether you need custom Roblox engine systems, full-stack Laravel applications, or technical consultation for your project—my inbox is open.
-                        </p>
+                        <p class="text-slate-400 text-base leading-relaxed mb-8">My inbox is open for custom Roblox systems, full-stack Laravel apps, or engineering collaborations.</p>
 
                         <div class="space-y-4">
-                            <!-- Email Item -->
                             <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400">
-                                    <i class="fa-regular fa-envelope"></i>
-                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fa-regular fa-envelope"></i></div>
                                 <div>
                                     <div class="text-xs text-slate-500 font-mono">EMAIL ADDRESS</div>
-                                    <a href="mailto:itzmeraja035@gmail.com" class="text-slate-200 hover:text-sky-400 font-medium transition-colors">itzmeraja035@gmail.com</a>
+                                    <a id="contact-email" href="#" class="text-slate-200 hover:text-sky-400 font-medium transition-colors"></a>
                                 </div>
                             </div>
-
-                            <!-- GitHub Profile -->
                             <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
-                                    <i class="fa-brands fa-github"></i>
-                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400"><i class="fa-brands fa-github"></i></div>
                                 <div>
                                     <div class="text-xs text-slate-500 font-mono">GITHUB PROFILE</div>
-                                    <a href="https://github.com/7frostt" target="_blank" class="text-slate-200 hover:text-sky-400 font-medium transition-colors">github.com/7frostt</a>
+                                    <a id="contact-github" href="#" target="_blank" class="text-slate-200 hover:text-sky-400 font-medium transition-colors"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Quick Action Contact Card -->
                     <div class="glass-panel rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-4">
                         <h4 class="text-lg font-bold text-white mb-2">Connect Directly</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm">
-                            Need a fast response? Send an email or connect through GitHub. I usually respond within 24 hours.
-                        </p>
-                        
-                        <div class="pt-2">
-                            <a href="mailto:itzmeraja035@gmail.com" class="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
-                                <i class="fa-regular fa-paper-plane"></i>
-                                <span>Send Direct Message</span>
-                            </a>
-                        </div>
-                        <div class="text-center">
-                            <button onclick="copyGithubUrl()" class="text-xs text-slate-400 hover:text-sky-400 transition-colors font-mono">
-                                <i class="fa-regular fa-copy mr-1"></i> Copy GitHub link to clipboard
-                            </button>
-                        </div>
+                        <p class="text-slate-400 text-xs sm:text-sm">Need a fast response? Send an email or connect through GitHub.</p>
+                        <a id="direct-email-btn" href="#" class="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-regular fa-paper-plane"></i> <span>Send Direct Message</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -578,63 +212,87 @@
 
     <footer class="border-t border-slate-800/80 bg-slate-950/80 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <!-- Brand & Copyright -->
             <div class="flex items-center space-x-3">
-                <span class="font-mono font-bold text-white text-sm">7frostt</span>
+                <span id="footer-handle" class="font-mono font-bold text-white text-sm">7frostt</span>
                 <span class="text-slate-600">&bull;</span>
                 <span class="text-slate-400 text-xs">&copy; 2026 Al. All rights reserved.</span>
             </div>
-
-            <!-- Live Clock Counter -->
             <div class="flex items-center space-x-2 text-xs font-mono text-slate-400 glass-panel px-3 py-1.5 rounded-lg border border-slate-800">
                 <span class="w-2 h-2 rounded-full bg-sky-400"></span>
                 <span>WIB Time:</span>
                 <span id="live-clock" class="text-sky-400 font-bold">00:00:00 WIB</span>
             </div>
-
-            <!-- Back to top -->
-            <a href="#" class="text-slate-400 hover:text-sky-400 text-xs font-mono flex items-center space-x-1 transition-colors">
-                <span>Back to top</span>
-                <i class="fa-solid fa-chevron-up text-xs"></i>
-            </a>
+            <a href="#" class="text-slate-400 hover:text-sky-400 text-xs font-mono">Back to top ↑</a>
         </div>
     </footer>
 
-    <!-- Toast Notification Container -->
-    <div id="toast-container" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="glass-panel bg-slate-900/90 border border-sky-500/50 px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-3 text-sm text-slate-200">
-            <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center">
-                <i class="fa-solid fa-check text-xs"></i>
-            </div>
-            <span id="toast-message">Copied to clipboard!</span>
-        </div>
-    </div>
+    <!-- Load External Config -->
+    <script src="config.js"></script>
 
+    <!-- Main Dynamic Script -->
     <script>
-        const terminalCommands = {
-            help: `Available Shell Commands:\n  - <span class="text-sky-400">whoami</span>   : View bio and full name\n  - <span class="text-sky-400">skills</span>   : List engine & web technology stack\n  - <span class="text-sky-400">projects</span> : View major featured repositories\n  - <span class="text-sky-400">contact</span>  : Get email & GitHub links\n  - <span class="text-sky-400">clear</span>    : Clear terminal screen`,
-            whoami: `7frostt (Al)\nRole: Senior Roblox Engine Specialist & Full-Stack Web Architect\nLocation: Indonesia\nBio: Passionate about Luau client-server frameworks, custom game physics, and modern web architectures using Laravel & Tailwind.`,
-            skills: `ROBLOX & LUAU  : Frameworks, DataStores, Raycasting, Physics, Voxel Engines\nFULL-STACK WEB : Laravel (PHP), MySQL, REST APIs, JavaScript, Tailwind CSS\nTOOLS & SCRIPT : Git/GitHub, Python, MediaPipe, XAMPP, VS Code`,
-            projects: `1. Sukarobot Web Portal [Laravel/PHP/MySQL]\n2. 4rtifacts & Aether-Tide [Luau Engine Framework]\n3. Maison Co. Boutique [Modern Web App]\n4. AI Hand-Tracking Tool [Python/MediaPipe]`,
-            contact: `Email  : itzmeraja035@gmail.com\nGitHub : https://github.com/7frostt`
-        };
+        // Populate profile fields from CONFIG
+        document.getElementById('nav-handle').innerText = CONFIG.profile.handle;
+        document.getElementById('nav-status').innerText = CONFIG.profile.statusText;
+        document.getElementById('hero-handle').innerText = CONFIG.profile.handle;
+        document.getElementById('hero-title').innerHTML = CONFIG.profile.title;
+        document.getElementById('hero-bio').innerText = CONFIG.profile.bio;
+        document.getElementById('terminal-header-title').innerText = `${CONFIG.profile.handle}@laptop:~ (zsh)`;
+        document.getElementById('terminal-prompt').innerText = `${CONFIG.profile.handle}@laptop:~$`;
+        document.getElementById('contact-email').innerText = CONFIG.profile.email;
+        document.getElementById('contact-email').href = `mailto:${CONFIG.profile.email}`;
+        document.getElementById('direct-email-btn').href = `mailto:${CONFIG.profile.email}`;
+        document.getElementById('contact-github').innerText = CONFIG.profile.githubUrl.replace('https://', '');
+        document.getElementById('contact-github').href = CONFIG.profile.githubUrl;
+        document.getElementById('footer-handle').innerText = CONFIG.profile.handle;
 
+        // Populate Stats
+        const statsContainer = document.getElementById('stats-container');
+        CONFIG.stats.forEach(s => {
+            statsContainer.innerHTML += `
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold font-mono text-sky-400">${s.number}</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium">${s.label}</div>
+                </div>`;
+        });
+
+        // Populate Projects
+        const projectsGrid = document.getElementById('projects-grid');
+        CONFIG.projects.forEach(p => {
+            projectsGrid.innerHTML += `
+                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="${p.category}">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">${p.badge}</span>
+                            <a href="${p.githubUrl}" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                        </div>
+                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">${p.title}</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${p.description}</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
+                            ${p.tags.map(t => `<span class="text-xs font-mono text-slate-400">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>`;
+        });
+
+        // Terminal Logic
         function runTerminalCommand(cmd) {
             const termBody = document.getElementById('terminal-body');
             const cleanCmd = cmd.trim().toLowerCase();
 
-            // Append input line
             const inputLine = document.createElement('div');
             inputLine.className = 'text-slate-300 mt-2';
-            inputLine.innerHTML = `<span class="text-emerald-400 font-bold">7frostt@laptop:~$</span> ${cmd}`;
+            inputLine.innerHTML = `<span class="text-emerald-400 font-bold">${CONFIG.profile.handle}@laptop:~$</span> ${cmd}`;
             termBody.appendChild(inputLine);
 
             if (cleanCmd === 'clear') {
-                termBody.innerHTML = '<div class="text-slate-400">Terminal screen cleared. Type <span class="text-emerald-400 font-bold">help</span> for commands.</div>';
-            } else if (terminalCommands[cleanCmd]) {
+                termBody.innerHTML = `<div class="text-slate-400">Terminal cleared. Type <span class="text-emerald-400 font-bold">help</span> for commands.</div>`;
+            } else if (CONFIG.terminalCommands[cleanCmd]) {
                 const responseLine = document.createElement('div');
                 responseLine.className = 'text-slate-300 whitespace-pre-wrap pl-2 border-l-2 border-sky-500/50 my-1';
-                responseLine.innerHTML = terminalCommands[cleanCmd];
+                responseLine.innerHTML = CONFIG.terminalCommands[cleanCmd];
                 termBody.appendChild(responseLine);
             } else if (cleanCmd !== '') {
                 const errLine = document.createElement('div');
@@ -655,67 +313,29 @@
             }
         }
 
-        function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
-            const buttons = document.querySelectorAll('.project-filter-btn');
-
-            buttons.forEach(btn => {
-                if (btn.getAttribute('data-filter') === category) {
-                    btn.className = "project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 bg-sky-500 text-slate-950 font-bold";
-                } else {
-                    btn.className = "project-filter-btn px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 glass-panel text-slate-300 hover:text-sky-400";
-                }
+        function filterProjects(cat) {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? 'flex' : 'none';
             });
-
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+            document.querySelectorAll('.project-filter-btn').forEach(btn => {
+                btn.className = (btn.getAttribute('data-filter') === cat) ? "project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono bg-sky-500 text-slate-950 font-bold" : "project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400";
             });
         }
 
         function copyGithubUrl() {
-            const githubUrl = 'https://github.com/7frostt';
-            
-            // Fallback for document copy
-            const tempInput = document.createElement('textarea');
-            tempInput.value = githubUrl;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            showToast('GitHub link copied to clipboard!');
-        }
-
-        function showToast(msg) {
-            const container = document.getElementById('toast-container');
-            const msgSpan = document.getElementById('toast-message');
-            msgSpan.innerText = msg;
-
-            container.classList.remove('translate-y-20', 'opacity-0');
-            container.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                container.classList.remove('translate-y-0', 'opacity-100');
-                container.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
+            navigator.clipboard.writeText(CONFIG.profile.githubUrl);
+            alert('GitHub link copied!');
         }
 
         function updateClock() {
             const options = { timeZone: 'Asia/Jakarta', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const now = new Date().toLocaleTimeString('en-US', options);
-            document.getElementById('live-clock').innerText = `${now} WIB`;
+            document.getElementById('live-clock').innerText = `${new Date().toLocaleTimeString('en-US', options)} WIB`;
         }
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Mobile Menu Toggle Logic
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
     </script>
 </body>
