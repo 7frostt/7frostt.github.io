@@ -48,7 +48,7 @@
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#about" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">01.</span> About</a>
                 <a href="#skills" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">02.</span> Skills</a>
-                <a href="#projects" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">03.</span> Projects</a>
+                <a href="#experiences" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">03.</span> Experiences</a>
                 <a href="#terminal" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">04.</span> Terminal</a>
                 <a href="#contact" class="text-slate-300 hover:text-sky-400 transition-colors"><span class="text-sky-400 font-mono text-xs">05.</span> Contact</a>
             </nav>
@@ -58,8 +58,8 @@
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                     <span id="nav-status">Open to Builds</span>
                 </div>
-                <button onclick="copyGithubUrl()" class="p-2 rounded-xl glass-panel hover:bg-slate-800 text-slate-300 hover:text-sky-400 transition-all text-sm">
-                    <i class="fa-brands fa-github text-lg"></i>
+                <button onclick="copyDiscordHandle()" class="p-2 rounded-xl glass-panel hover:bg-slate-800 text-slate-300 hover:text-sky-400 transition-all text-sm" title="Copy Discord">
+                    <i class="fa-brands fa-discord text-lg"></i>
                 </button>
             </div>
 
@@ -71,7 +71,7 @@
         <div id="mobile-menu" class="hidden md:hidden glass-nav border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
             <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">01. About</a>
             <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">02. Skills</a>
-            <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">03. Projects</a>
+            <a href="#experiences" class="block py-2 text-slate-300 hover:text-sky-400">03. Experiences</a>
             <a href="#terminal" class="block py-2 text-slate-300 hover:text-sky-400">04. Terminal</a>
             <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">05. Contact</a>
         </div>
@@ -92,14 +92,14 @@
             <p id="hero-bio" class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-10"></p>
 
             <div class="flex flex-wrap items-center justify-center gap-4">
-                <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-slate-950 font-bold text-sm shadow-lg hover:scale-105 transition-all">Explore Projects</a>
+                <a href="#experiences" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-slate-950 font-bold text-sm shadow-lg hover:scale-105 transition-all">Explore Experiences</a>
                 <a href="#terminal" class="px-7 py-3.5 rounded-xl glass-panel text-slate-200 hover:text-sky-400 font-mono text-sm border border-slate-700 hover:bg-slate-800 transition-all flex items-center space-x-2">
                     <i class="fa-solid fa-terminal text-sky-400"></i>
                     <span>Launch Terminal</span>
                 </a>
-                <button onclick="copyGithubUrl()" class="px-5 py-3.5 rounded-xl glass-panel text-slate-400 hover:text-white text-sm border border-slate-800 flex items-center space-x-2">
-                    <i class="fa-regular fa-copy"></i>
-                    <span class="hidden sm:inline">Copy GitHub</span>
+                <button onclick="copyDiscordHandle()" class="px-5 py-3.5 rounded-xl glass-panel text-slate-400 hover:text-white text-sm border border-slate-800 flex items-center space-x-2">
+                    <i class="fa-brands fa-discord text-sky-400"></i>
+                    <span id="btn-discord-tag">7frostt_</span>
                 </button>
             </div>
         </section>
@@ -107,28 +107,28 @@
         <!-- Stats Counter -->
         <section class="border-y border-slate-800/80 bg-slate-950/40 py-10 my-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div id="stats-container" class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"></div>
+                <div id="stats-container" class="flex flex-wrap items-center justify-center gap-12 text-center"></div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Experiences Section -->
+        <section id="experiences" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center text-center mb-12">
                 <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">// Featured Portfolio</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold text-white">Highlighted Works &amp; Builds</h3>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Experiences &amp; Builds</h3>
                 <div class="w-12 h-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full mt-4"></div>
             </div>
 
             <!-- Filters -->
             <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-                <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono bg-sky-500 text-slate-950 font-bold" data-filter="all">All Builds</button>
-                <button onclick="filterProjects('roblox')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="roblox">Roblox Studio</button>
-                <button onclick="filterProjects('web')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="web">Web Dev</button>
-                <button onclick="filterProjects('tools')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="tools">Tools &amp; AI</button>
+                <button onclick="filterExperiences('all')" class="exp-filter-btn active px-4 py-2 rounded-xl text-xs font-mono bg-sky-500 text-slate-950 font-bold" data-filter="all">All Builds</button>
+                <button onclick="filterExperiences('roblox')" class="exp-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="roblox">Roblox Studio</button>
+                <button onclick="filterExperiences('web')" class="exp-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="web">Web Dev</button>
+                <button onclick="filterExperiences('tools')" class="exp-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400" data-filter="tools">Tools &amp; AI</button>
             </div>
 
-            <!-- Dynamic Project Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <!-- Dynamic Experiences Grid -->
+            <div id="experiences-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </section>
 
         <!-- Terminal Section -->
@@ -151,15 +151,14 @@
 
                 <div id="terminal-body" class="p-5 h-80 overflow-y-auto space-y-3 bg-slate-950/80 text-slate-200">
                     <div class="text-slate-400">
-                        Welcome to <span class="text-sky-400 font-bold">7frostt OS v2026</span>. Type <span class="text-emerald-400 font-bold">help</span> to view commands.
+                        Welcome to <span class="text-sky-400 font-bold">7frostt OS v2026</span>. Type <span class="text-emerald-400 font-bold">help</span> for commands.
                     </div>
                 </div>
 
                 <div class="px-4 py-2 bg-slate-900/50 border-t border-slate-800 flex flex-wrap gap-2 text-xs">
                     <span class="text-slate-500 py-1">Quick Run:</span>
                     <button onclick="runTerminalCommand('whoami')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">whoami</button>
-                    <button onclick="runTerminalCommand('skills')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">skills</button>
-                    <button onclick="runTerminalCommand('projects')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">projects</button>
+                    <button onclick="runTerminalCommand('experiences')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">experiences</button>
                     <button onclick="runTerminalCommand('contact')" class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">contact</button>
                     <button onclick="runTerminalCommand('clear')" class="px-2 py-0.5 rounded bg-slate-800 text-rose-400">clear</button>
                 </div>
@@ -178,18 +177,18 @@
                     <div>
                         <span class="text-xs font-mono text-sky-400 uppercase tracking-widest">// Initiate Contact</span>
                         <h3 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Let's Build Something Exceptional</h3>
-                        <p class="text-slate-400 text-base leading-relaxed mb-8">My inbox is open for custom Roblox systems, full-stack Laravel apps, or engineering collaborations.</p>
+                        <p class="text-slate-400 text-base leading-relaxed mb-8">Hit me up on Discord or GitHub for Roblox engine systems, full-stack web builds, or project collaborations.</p>
 
                         <div class="space-y-4">
                             <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fa-regular fa-envelope"></i></div>
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400"><i class="fa-brands fa-discord text-xl"></i></div>
                                 <div>
-                                    <div class="text-xs text-slate-500 font-mono">EMAIL ADDRESS</div>
-                                    <a id="contact-email" href="#" class="text-slate-200 hover:text-sky-400 font-medium transition-colors"></a>
+                                    <div class="text-xs text-slate-500 font-mono">DISCORD</div>
+                                    <span id="contact-discord" class="text-slate-200 font-medium cursor-pointer hover:text-sky-400 transition-colors" onclick="copyDiscordHandle()">7frostt_</span>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400"><i class="fa-brands fa-github"></i></div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400"><i class="fa-brands fa-github text-xl"></i></div>
                                 <div>
                                     <div class="text-xs text-slate-500 font-mono">GITHUB PROFILE</div>
                                     <a id="contact-github" href="#" target="_blank" class="text-slate-200 hover:text-sky-400 font-medium transition-colors"></a>
@@ -198,12 +197,12 @@
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-4">
+                    <div class="glass-panel rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-4 text-center sm:text-left">
                         <h4 class="text-lg font-bold text-white mb-2">Connect Directly</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm">Need a fast response? Send an email or connect through GitHub.</p>
-                        <a id="direct-email-btn" href="#" class="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
-                            <i class="fa-regular fa-paper-plane"></i> <span>Send Direct Message</span>
-                        </a>
+                        <p class="text-slate-400 text-xs sm:text-sm">Copy my Discord handle to add me directly or check my GitHub repos.</p>
+                        <button onclick="copyDiscordHandle()" class="w-full py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-discord"></i> <span>Copy Discord Handle</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -226,22 +225,18 @@
         </div>
     </footer>
 
-    <!-- Load External Config -->
     <script src="config.js"></script>
-
-    <!-- Main Dynamic Script -->
     <script>
-        // Populate profile fields from CONFIG
+        // Populate profile fields
         document.getElementById('nav-handle').innerText = CONFIG.profile.handle;
         document.getElementById('nav-status').innerText = CONFIG.profile.statusText;
         document.getElementById('hero-handle').innerText = CONFIG.profile.handle;
         document.getElementById('hero-title').innerHTML = CONFIG.profile.title;
         document.getElementById('hero-bio').innerText = CONFIG.profile.bio;
+        document.getElementById('btn-discord-tag').innerText = CONFIG.profile.discord;
         document.getElementById('terminal-header-title').innerText = `${CONFIG.profile.handle}@laptop:~ (zsh)`;
         document.getElementById('terminal-prompt').innerText = `${CONFIG.profile.handle}@laptop:~$`;
-        document.getElementById('contact-email').innerText = CONFIG.profile.email;
-        document.getElementById('contact-email').href = `mailto:${CONFIG.profile.email}`;
-        document.getElementById('direct-email-btn').href = `mailto:${CONFIG.profile.email}`;
+        document.getElementById('contact-discord').innerText = CONFIG.profile.discord;
         document.getElementById('contact-github').innerText = CONFIG.profile.githubUrl.replace('https://', '');
         document.getElementById('contact-github').href = CONFIG.profile.githubUrl;
         document.getElementById('footer-handle').innerText = CONFIG.profile.handle;
@@ -256,28 +251,28 @@
                 </div>`;
         });
 
-        // Populate Projects
-        const projectsGrid = document.getElementById('projects-grid');
-        CONFIG.projects.forEach(p => {
-            projectsGrid.innerHTML += `
-                <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="${p.category}">
+        // Populate Experiences
+        const experiencesGrid = document.getElementById('experiences-grid');
+        CONFIG.experiences.forEach(e => {
+            experiencesGrid.innerHTML += `
+                <div class="exp-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5" data-category="${e.category}">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">${p.badge}</span>
-                            <a href="${p.githubUrl}" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">${e.badge}</span>
+                            <a href="${e.githubUrl}" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
                         </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">${p.title}</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${p.description}</p>
+                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">${e.title}</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${e.description}</p>
                     </div>
                     <div class="p-6 pt-0">
                         <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            ${p.tags.map(t => `<span class="text-xs font-mono text-slate-400">${t}</span>`).join('')}
+                            ${e.tags.map(t => `<span class="text-xs font-mono text-slate-400">${t}</span>`).join('')}
                         </div>
                     </div>
                 </div>`;
         });
 
-        // Terminal Logic
+        // Terminal logic
         function runTerminalCommand(cmd) {
             const termBody = document.getElementById('terminal-body');
             const cleanCmd = cmd.trim().toLowerCase();
@@ -313,18 +308,18 @@
             }
         }
 
-        function filterProjects(cat) {
-            document.querySelectorAll('.project-card').forEach(card => {
+        function filterExperiences(cat) {
+            document.querySelectorAll('.exp-card').forEach(card => {
                 card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? 'flex' : 'none';
             });
-            document.querySelectorAll('.project-filter-btn').forEach(btn => {
-                btn.className = (btn.getAttribute('data-filter') === cat) ? "project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono bg-sky-500 text-slate-950 font-bold" : "project-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400";
+            document.querySelectorAll('.exp-filter-btn').forEach(btn => {
+                btn.className = (btn.getAttribute('data-filter') === cat) ? "exp-filter-btn active px-4 py-2 rounded-xl text-xs font-mono bg-sky-500 text-slate-950 font-bold" : "exp-filter-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-sky-400";
             });
         }
 
-        function copyGithubUrl() {
-            navigator.clipboard.writeText(CONFIG.profile.githubUrl);
-            alert('GitHub link copied!');
+        function copyDiscordHandle() {
+            navigator.clipboard.writeText(CONFIG.profile.discord);
+            alert(`Copied Discord handle (${CONFIG.profile.discord}) to clipboard!`);
         }
 
         function updateClock() {

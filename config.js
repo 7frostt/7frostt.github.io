@@ -1,6 +1,5 @@
 // ============================================================
 // ❄️ 7FROSTT PORTFOLIO CONFIGURATION
-// Edit anything in this file to update your portfolio instantly!
 // ============================================================
 
 const CONFIG = {
@@ -9,97 +8,76 @@ const CONFIG = {
         handle: "7frostt",
         nickname: "Al",
         fullName: "Muhammad Raja Alkautsar",
-        title: "Senior Roblox Engine Specialist & Full-Stack Web Architect",
-        bio: "Known locally as Al. Crafting scalable client-server frameworks, custom physics, and data systems in Luau, alongside production web systems with Laravel, PHP, MySQL, and Tailwind.",
-        email: "itzmeraja035@gmail.com",
+        title: "Founder @ Tideline • Roblox Developer & Full-Stack Developer",
+        bio: "Known as Al. Founder of Tideline, Scripter at NovaForge Studio, and Project Manager at Ascend. Specialized in modular Luau systems, full-stack Roblox productions, and web systems.",
+        discord: "7frostt_",
         githubUrl: "https://github.com/7frostt",
-        location: "Indonesia",
+        location: "ndonesia",
         statusText: "Open to Builds"
     },
 
-    // 2. Quick Counter Stats
+    // 2. Stats
     stats: [
-        { number: "15+", label: "Production Builds" },
-        { number: "120K+", label: "Lines of Luau & PHP" },
-        { number: "99.9%", label: "System Uptime Rate" },
-        { number: "3+ Yrs", label: "Engineering Exp" }
+        { number: "2023+", label: "Full-Stack Roblox" },
+        { number: "Tideline", label: "Founder" },
+        { number: "NovaForge", label: "Scripter" },
+        { number: "Ascend", label: "Project Manager" }
     ],
 
-    // 3. CLI Terminal Commands & Answers (Add new ones here anytime!)
+    // 3. CLI Terminal Commands
     terminalCommands: {
-        help: `Available Shell Commands:
-  - <span class="text-sky-400">whoami</span>   : View bio and full name
-  - <span class="text-sky-400">skills</span>   : List engine & web technology stack
-  - <span class="text-sky-400">projects</span> : View major featured repositories
-  - <span class="text-sky-400">contact</span>  : Get email & GitHub links
-  - <span class="text-sky-400">clear</span>    : Clear terminal screen`,
+        help: `Available Commands:
+  - <span class="text-sky-400">whoami</span>      : View bio & identity
+  - <span class="text-sky-400">experiences</span> : View full roles & builds
+  - <span class="text-sky-400">contact</span>     : Get discord & github
+  - <span class="text-sky-400">clear</span>       : Clear screen`,
 
         whoami: `7frostt (Al)
-Role     : Senior Roblox Engine Specialist & Full-Stack Web Architect
-Location : Indonesia
-Bio      : Passionate about Luau client-server frameworks, custom game physics, and modern web architectures using Laravel & Tailwind.`,
+Roles   : Founder @ Tideline | Scripter @ NovaForge | PM @ Ascend
+Discord : 7frostt_
+GitHub  : https://github.com/7frostt`,
 
-        skills: `ROBLOX & LUAU  : Frameworks, DataStores, Raycasting, Physics, Voxel Engines
-FULL-STACK WEB : Laravel (PHP), MySQL, REST APIs, JavaScript, Tailwind CSS
-TOOLS & SCRIPT : Git/GitHub, Python, MediaPipe, XAMPP, VS Code`,
+        experiences: `1. Tideline [Founder]
+2. Scripter @ NovaForge Studio (2026 - Present)
+3. Project Manager @ Ascend (2026 - Present)
+4. Full-Stack Roblox Developer (2023 - Present)`,
 
-        projects: `1. Sukarobot Web Portal [Laravel/PHP/MySQL]
-2. 4rtifacts & Aether-Tide [Luau Engine Framework]
-3. Maison Co. Boutique [Modern Web App]
-4. AI Hand-Tracking Tool [Python/MediaPipe]`,
-
-        contact: `Email  : itzmeraja035@gmail.com
-GitHub : https://github.com/7frostt`
+        contact: `Discord : 7frostt_
+GitHub  : https://github.com/7frostt`
     },
 
-    // 4. Featured Projects List
-    projects: [
+    // 4. Featured Experiences & Roles
+    experiences: [
         {
-            title: "Web Sukarobot Sukabumi",
-            category: "web",
-            badge: "Web Dev • Internship",
-            description: "Full-stack web application developed for Sukarobot Sukabumi internship. Powered by Laravel 11, PHP, and MySQL database managing educational & robotics catalog data.",
-            tags: ["#Laravel", "#PHP8.3", "#MySQL", "#Tailwind"],
-            githubUrl: "https://github.com/Rijalpratama23/web_sukarobot_sukabumi"
-        },
-        {
-            title: "4rtifacts & Aether-Tide Engine",
+            title: "Founder - Tideline",
             category: "roblox",
-            badge: "Roblox Studio",
-            description: "Custom Roblox experiences featuring modular Luau client-server frameworks, optimized item replication, custom inventory data structures, and atmospheric combat mechanics.",
-            tags: ["#Luau", "#DataStore2", "#CustomPhysics"],
+            badge: "Founder • 2026",
+            description: "Founder and lead developer behind Tideline, directing vision, game architecture, and core mechanics.",
+            tags: ["#Founder", "#RobloxEngine", "#Luau", "#ProjectLead"],
             githubUrl: "https://github.com/7frostt"
         },
         {
-            title: "Maison Co. Boutique Web",
-            category: "web",
-            badge: "Web Dev",
-            description: "High-end modern boutique showcase site featuring smooth client-side filtering, animated UI transitions, responsive glassmorphism themes, and RESTful product routing.",
-            tags: ["#JavaScript", "#HTML5", "#CSS3"],
-            githubUrl: "https://github.com/7frostt"
-        },
-        {
-            title: "Voxel Digging & Physics Engine",
+            title: "Scripter - NovaForge Studio",
             category: "roblox",
-            badge: "Roblox Studio",
-            description: "Procedural voxel terrain destruction and excavation mechanics. Optimized server-authoritative hitboxes and client-side particle interpolation for smooth performance.",
-            tags: ["#Luau", "#Raycasting", "#Voxels"],
+            badge: "Roblox Studio • 2026 - Present",
+            description: "Gameplay programmer building modular and scalable Luau systems, performance optimization, and custom game mechanics.",
+            tags: ["#Luau", "#GameplayProgramming", "#Optimization"],
             githubUrl: "https://github.com/7frostt"
         },
         {
-            title: "Desktop AI Gesture & Vision",
+            title: "Project Manager - Ascend",
             category: "tools",
-            badge: "Tools & AI",
-            description: "Real-time camera hand landmark tracking tool created with Python and Google MediaPipe. Enables gesture-based OS inputs and custom event listeners.",
-            tags: ["#Python", "#MediaPipe", "#OpenCV"],
+            badge: "Management • 2026 - Present",
+            description: "Managing development milestones, task priorities, testing feedback, and team production workflows.",
+            tags: ["#ProjectManager", "#Milestones", "#TeamWorkflow"],
             githubUrl: "https://github.com/7frostt"
         },
         {
-            title: "Wasteline - Survival Project",
+            title: "Full-Stack Roblox Developer",
             category: "roblox",
-            badge: "Roblox Studio",
-            description: "Solo survival game build with dynamic weather cycles, custom HUD interfaces, stamina & hunger attributes, and server-side inventory security.",
-            tags: ["#RobloxStudio", "#Luau", "#UI/UX"],
+            badge: "Independent • 2023 - Present",
+            description: "Designing original Roblox experiences from concept to release: gameplay logic, multiplayer systems, UI, data saving, and Rojo pipelines.",
+            tags: ["#RobloxStudio", "#Luau", "#Rojo", "#DataSaving"],
             githubUrl: "https://github.com/7frostt"
         }
     ]
