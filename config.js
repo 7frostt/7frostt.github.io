@@ -8,17 +8,23 @@ const CONFIG = {
         handle: "7frostt",
         nickname: "Al",
         fullName: "Muhammad Raja Alkautsar",
-        title: "Founder @ Tideline • Roblox Developer & Full-Stack Developer",
-        bio: "Known as Al. Founder of Tideline, Scripter at NovaForge Studio, and Project Manager at Ascend. Specialized in modular Luau systems, full-stack Roblox productions, and web systems.",
+        title: "Founder @ Tideline • Roblox Studio & Full-Stack Developer",
+        bio: `Hi! I'm Al (also known as 7Frostt), an Indonesian Roblox Developer and Project Manager with a passion for building fun, scalable, and polished game systems.
+
+I specialize in gameplay programming, progression systems, multiplayer mechanics, UI logic, and overall game architecture. Alongside programming, I also enjoy planning features, organizing development workflows, and helping teams turn ideas into playable experiences.
+
+I'm currently working with multiple Roblox development teams while also developing my own original projects. I enjoy solving technical challenges, optimizing systems, and creating gameplay that feels rewarding for players.
+
+I'm always open to collaborating with developers, studios, and teams on exciting Roblox projects.`,
         discord: "7frostt_",
         githubUrl: "https://github.com/7frostt",
-        location: "ndonesia",
+        location: "Indonesia",
         statusText: "Open to Builds"
     },
 
     // 2. Stats
     stats: [
-        { number: "2023+", label: "Full-Stack Roblox" },
+        { number: "3 Yrs", label: "Full-Stack Roblox" },
         { number: "Tideline", label: "Founder" },
         { number: "NovaForge", label: "Scripter" },
         { number: "Ascend", label: "Project Manager" }
