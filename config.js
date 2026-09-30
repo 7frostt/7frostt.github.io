@@ -25,7 +25,7 @@ I'm always open to collaborating with developers, studios, and teams on exciting
 
     // 2. Stats
     stats: [
-        { number: "# Yrs", label: "Full-Stack Roblox" },
+        { number: "3 Yrs", label: "Full-Stack Roblox" },
         { number: "Tideline", label: "Founder" },
         { number: "NovaForge", label: "Scripter" },
         { number: "Ascend", label: "Project Manager" }
