@@ -7,7 +7,7 @@ const CONFIG = {
     profile: {
         handle: "7frostt",
         nickname: "Al",
-        fullName: "Muhammad Raja Alkautsar",
+        fullName: "Raja Alkautsar",
         title: "Founder @ Tideline • Roblox Studio & Full-Stack Developer",
         bio: `Hi! I'm Al (also known as 7Frostt), an Indonesian Roblox Developer and Project Manager with a passion for building fun, scalable, and polished game systems.
 
@@ -17,6 +17,7 @@ I'm currently working with multiple Roblox development teams while also developi
 
 I'm always open to collaborating with developers, studios, and teams on exciting Roblox projects.`,
         discord: "7frostt_",
+        discordServer: "https://discord.gg/asg2wUqYhj", // tideline discord server
         githubUrl: "https://github.com/7frostt",
         location: "Indonesia",
         statusText: "Open to Builds"
@@ -24,7 +25,7 @@ I'm always open to collaborating with developers, studios, and teams on exciting
 
     // 2. Stats
     stats: [
-        { number: "3 Yrs", label: "Full-Stack Roblox" },
+        { number: "# Yrs", label: "Full-Stack Roblox" },
         { number: "Tideline", label: "Founder" },
         { number: "NovaForge", label: "Scripter" },
         { number: "Ascend", label: "Project Manager" }
@@ -48,8 +49,9 @@ GitHub  : https://github.com/7frostt`,
 3. Project Manager @ Ascend (2026 - Present)
 4. Full-Stack Roblox Developer (2023 - Present)`,
 
-        contact: `Discord : 7frostt_
-GitHub  : https://github.com/7frostt`
+        contact: `Discord User   : 7frostt_
+Tideline Server: https://discord.gg/asg2wUqYhj
+GitHub         : https://github.com/7frostt`
     },
 
     // 4. Featured Experiences & Roles

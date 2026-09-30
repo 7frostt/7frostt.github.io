@@ -180,16 +180,28 @@
                     <div>
                         <span class="text-xs font-mono text-sky-400 uppercase tracking-widest">// Initiate Contact</span>
                         <h3 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Let's Build Something Exceptional</h3>
-                        <p class="text-slate-400 text-base leading-relaxed mb-8">Hit me up on Discord or GitHub for Roblox engine systems, full-stack web builds, or project collaborations.</p>
+                        <p class="text-slate-400 text-base leading-relaxed mb-8">Add me on Discord, join the official Tideline community server, or check out my GitHub repos.</p>
 
                         <div class="space-y-4">
+                            <!-- Personal Discord Handle -->
                             <div class="flex items-center space-x-4">
                                 <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400"><i class="fa-brands fa-discord text-xl"></i></div>
                                 <div>
-                                    <div class="text-xs text-slate-500 font-mono">DISCORD</div>
+                                    <div class="text-xs text-slate-500 font-mono">DISCORD USERNAME</div>
                                     <span id="contact-discord" class="text-slate-200 font-medium cursor-pointer hover:text-sky-400 transition-colors" onclick="copyDiscordHandle()">7frostt_</span>
                                 </div>
                             </div>
+
+                            <!-- Tideline Server -->
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fa-solid fa-users text-lg"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-mono">TIDELINE DISCORD SERVER</div>
+                                    <a id="contact-server-link" href="#" target="_blank" class="text-slate-200 hover:text-sky-400 font-medium transition-colors">discord.gg/asg2wUqYhj</a>
+                                </div>
+                            </div>
+
+                            <!-- GitHub -->
                             <div class="flex items-center space-x-4">
                                 <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400"><i class="fa-brands fa-github text-xl"></i></div>
                                 <div>
@@ -200,12 +212,24 @@
                         </div>
                     </div>
 
+                    <!-- Dual Action Contact Box -->
                     <div class="glass-panel rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-4 text-center sm:text-left">
-                        <h4 class="text-lg font-bold text-white mb-2">Connect Directly</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm">Copy my Discord handle to add me directly or check my GitHub repos.</p>
-                        <button onclick="copyDiscordHandle()" class="w-full py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
-                            <i class="fa-brands fa-discord"></i> <span>Copy Discord Handle</span>
-                        </button>
+                        <h4 class="text-lg font-bold text-white mb-1">Connect Directly</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-4">Choose how you want to reach out or join the community:</p>
+                        
+                        <div class="space-y-3">
+                            <!-- Option 1: Copy Username -->
+                            <button onclick="copyDiscordHandle()" class="w-full py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
+                                <i class="fa-brands fa-discord"></i> 
+                                <span>Copy Discord Username (7frostt_)</span>
+                            </button>
+
+                            <!-- Option 2: Join Tideline Server -->
+                            <a id="join-server-btn" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl glass-panel border border-sky-500/40 hover:bg-sky-500/20 text-sky-300 font-bold text-sm flex items-center justify-center space-x-2 transition-colors">
+                                <i class="fa-solid fa-gamepad"></i> 
+                                <span>Join Tideline Server</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,6 +267,11 @@
         document.getElementById('contact-github').innerText = CONFIG.profile.githubUrl.replace('https://', '');
         document.getElementById('contact-github').href = CONFIG.profile.githubUrl;
         document.getElementById('footer-handle').innerText = CONFIG.profile.handle;
+        // Populate contact & server links from CONFIG
+        document.getElementById('contact-discord').innerText = CONFIG.profile.discord;
+        document.getElementById('contact-server-link').innerText = CONFIG.profile.discordServer.replace('https://', '');
+        document.getElementById('contact-server-link').href = CONFIG.profile.discordServer;
+        document.getElementById('join-server-btn').href = CONFIG.profile.discordServer;
 
         // Populate Stats
         const statsContainer = document.getElementById('stats-container');
