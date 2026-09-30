@@ -114,6 +114,18 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center text-center mb-16">
+                <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">// Technical & Leadership Capabilities</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Skills &amp; Expertise</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full mt-4"></div>
+            </div>
+
+            <!-- Dynamic Skills Grid -->
+            <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </section>
+
         <!-- Experiences Section -->
         <section id="experiences" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center text-center mb-12">
@@ -280,6 +292,24 @@
                 <div class="space-y-1">
                     <div class="text-3xl sm:text-4xl font-extrabold font-mono text-sky-400">${s.number}</div>
                     <div class="text-xs sm:text-sm text-slate-400 font-medium">${s.label}</div>
+                </div>`;
+        });
+
+        // Populate Skills
+        const skillsGrid = document.getElementById('skills-grid');
+        CONFIG.skills.forEach(s => {
+            skillsGrid.innerHTML += `
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6">
+                            <i class="${s.icon}"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">${s.title}</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">${s.description}</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
+                        ${s.tags.map(t => `<span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">${t}</span>`).join('')}
+                    </div>
                 </div>`;
         });
 
