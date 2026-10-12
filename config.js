@@ -8,7 +8,8 @@ const CONFIG = {
         handle: "7frostt",
         nickname: "Al",
         fullName: "Muhammad Raja Alkautsar",
-        title: "Founder @ Tideline • Full-Stack Roblox Developer • Project Manager",
+        title: "Founder @ Tideline • Roblox Developer & Project Manager",
+        tagline: "You name the vision. I make it happen.",
         bio: `Hi! I'm Al (also known as 7Frostt), an Indonesian Roblox Developer and Project Manager with a passion for building fun, scalable, and polished game systems.
 
 I specialize in gameplay programming, progression systems, multiplayer mechanics, UI logic, and overall game architecture. Alongside programming, I also enjoy planning features, organizing development workflows, and helping teams turn ideas into playable experiences.
@@ -19,19 +20,20 @@ I'm always open to collaborating with developers, studios, and teams on exciting
         discord: "7frostt_",
         discordServer: "https://discord.gg/asg2wUqYhj",
         githubUrl: "https://github.com/7frostt",
-        location: "Indonesia",
+        location: "Sukabumi, Indonesia",
         statusText: "Open to Builds"
     },
 
     // 2. Stats
     stats: [
-        { number: "3 Years", label: "Roblox Engineering" },
+        { number: "3 Yrs", label: "Roblox Developer" },
         { number: "Tideline", label: "Founder" },
         { number: "NovaForge", label: "Scripter" },
-        { number: "Ascend", label: "Project Manager" }
+        { number: "Ascend", label: "Project Manager" },
+        { number: "<span id='live-views'>...</span>", label: "Site Visitors" }
     ],
 
-    // 3. Skills (Roblox & Leadership Focused)
+    // 3. Skills
     skills: [
         {
             title: "Gameplay Programming & Luau",
@@ -59,6 +61,7 @@ I'm always open to collaborating with developers, studios, and teams on exciting
   - <span class="text-sky-400">whoami</span>      : View bio & identity
   - <span class="text-sky-400">skills</span>      : List roblox engine & PM skills
   - <span class="text-sky-400">experiences</span> : View full roles & builds
+  - <span class="text-sky-400">media</span>       : View video showcases status
   - <span class="text-sky-400">contact</span>     : Get discord & github
   - <span class="text-sky-400">clear</span>       : Clear screen`,
 
@@ -75,6 +78,8 @@ GAME SYSTEMS       : Progression, Economy, UI Logic, Security`,
 2. Scripter @ NovaForge Studio (2026 - Present)
 3. Project Manager @ Ascend (2026 - Present)
 4. Full-Stack Roblox Developer (2023 - Present)`,
+
+        media: `7frostt is preparing media clips as proof of previous works. stay tuned!`,
 
         contact: `Discord User   : 7frostt_
 Tideline Server: https://discord.gg/asg2wUqYhj
@@ -115,5 +120,9 @@ GitHub         : https://github.com/7frostt`
             tags: ["#RobloxStudio", "#Luau", "#Rojo", "#DataSaving"],
             githubUrl: "https://github.com/7frostt"
         }
-    ]
+    ],
+
+    // 6. Media Video Section Config (Add video objects here whenever you are ready!)
+    mediaFallbackText: "7frostt is currently cooking up high-quality video clips as proof of his previous works. stay patient! ❄️",
+    media: [] // leave empty for now to show fallback card automatically
 };
