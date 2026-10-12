@@ -9,7 +9,7 @@ const CONFIG = {
         nickname: "Al",
         fullName: "Muhammad Raja Alkautsar",
         title: "Founder @ Tideline • Roblox Developer & Project Manager",
-        tagline: "You name the vision. I make it happen.",
+        tagline: "You name the vision. I make it happen.", // <--- FIXES HERO UNDEFINED
         bio: `Hi! I'm Al (also known as 7Frostt), an Indonesian Roblox Developer and Project Manager with a passion for building fun, scalable, and polished game systems.
 
 I specialize in gameplay programming, progression systems, multiplayer mechanics, UI logic, and overall game architecture. Alongside programming, I also enjoy planning features, organizing development workflows, and helping teams turn ideas into playable experiences.
@@ -26,11 +26,10 @@ I'm always open to collaborating with developers, studios, and teams on exciting
 
     // 2. Stats
     stats: [
-        { number: "3 Yrs", label: "Roblox Developer" },
+        { number: "3 Years", label: "Roblox Engineering" },
         { number: "Tideline", label: "Founder" },
         { number: "NovaForge", label: "Scripter" },
-        { number: "Ascend", label: "Project Manager" },
-        { number: "<span id='live-views'>...</span>", label: "Site Visitors" }
+        { number: "Ascend", label: "Project Manager" }
     ],
 
     // 3. Skills
@@ -61,7 +60,6 @@ I'm always open to collaborating with developers, studios, and teams on exciting
   - <span class="text-sky-400">whoami</span>      : View bio & identity
   - <span class="text-sky-400">skills</span>      : List roblox engine & PM skills
   - <span class="text-sky-400">experiences</span> : View full roles & builds
-  - <span class="text-sky-400">media</span>       : View video showcases status
   - <span class="text-sky-400">contact</span>     : Get discord & github
   - <span class="text-sky-400">clear</span>       : Clear screen`,
 
@@ -78,8 +76,6 @@ GAME SYSTEMS       : Progression, Economy, UI Logic, Security`,
 2. Scripter @ NovaForge Studio (2026 - Present)
 3. Project Manager @ Ascend (2026 - Present)
 4. Full-Stack Roblox Developer (2023 - Present)`,
-
-        media: `7frostt is preparing media clips as proof of previous works. stay tuned!`,
 
         contact: `Discord User   : 7frostt_
 Tideline Server: https://discord.gg/asg2wUqYhj
@@ -122,7 +118,7 @@ GitHub         : https://github.com/7frostt`
         }
     ],
 
-    // 6. Media Video Section Config (Add video objects here whenever you are ready!)
-    mediaFallbackText: "7frostt is currently cooking up high-quality video clips as proof of his previous works. stay patient! ❄️",
-    media: [] // leave empty for now to show fallback card automatically
+    // 6. Media Video Section Config
+    mediaFallbackText: "7Frostt is preparing the media to proof of his previous works, so be patient. :)", // <--- FIXES MEDIA UNDEFINED
+    media: []
 };

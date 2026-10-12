@@ -23,20 +23,38 @@
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: #e2e8f0; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        
+        .glass-panel { 
+            background: var(--panel-bg); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+        }
         .glass-panel:hover { border-color: var(--border-glow); }
-        .glass-nav { background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-nav { 
+            background: rgba(11, 15, 25, 0.85); 
+            backdrop-filter: blur(20px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        }
         .text-glow { text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 0 40px rgba(96, 165, 250, 0.3); }
-        .cyber-grid { background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%), linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 100% 100%, 40px 40px, 40px 40px; }
+        .cyber-grid { 
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%), 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px); 
+            background-size: 100% 100%, 40px 40px, 40px 40px; 
+        }
+        
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #080c14; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
 
-        /* Smooth Scroll Animations */
+        /* Scroll Reveal Animations */
         .reveal {
             opacity: 0;
-            transform: translateY(35px);
+            transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
             will-change: opacity, transform;
         }
@@ -281,76 +299,90 @@
 
     <script src="config.js"></script>
     <script>
-        // Populate Header & Hero
-        document.getElementById('nav-handle').innerText = CONFIG.profile.handle;
-        document.getElementById('nav-status').innerText = CONFIG.profile.statusText;
-        document.getElementById('hero-handle').innerText = CONFIG.profile.handle;
-        document.getElementById('hero-title').innerHTML = CONFIG.profile.title;
-        document.getElementById('hero-tagline').innerText = CONFIG.profile.tagline;
-        document.getElementById('about-bio').innerText = CONFIG.profile.bio;
-        document.getElementById('btn-discord-tag').innerText = CONFIG.profile.discord;
+        // Safe Config Populate
+        const handle = (CONFIG.profile && CONFIG.profile.handle) || "7frostt";
+        const statusText = (CONFIG.profile && CONFIG.profile.statusText) || "Open to Builds";
+        const title = (CONFIG.profile && CONFIG.profile.title) || "";
+        const tagline = (CONFIG.profile && CONFIG.profile.tagline) || "You name the vision. I make it happen.";
+        const bio = (CONFIG.profile && CONFIG.profile.bio) || "";
+        const discord = (CONFIG.profile && CONFIG.profile.discord) || "7frostt_";
+        const discordServer = (CONFIG.profile && CONFIG.profile.discordServer) || "https://discord.gg/asg2wUqYhj";
+        const githubUrl = (CONFIG.profile && CONFIG.profile.githubUrl) || "https://github.com/7frostt";
+
+        document.getElementById('nav-handle').innerText = handle;
+        document.getElementById('nav-status').innerText = statusText;
+        document.getElementById('hero-handle').innerText = handle;
+        document.getElementById('hero-title').innerHTML = title;
+        document.getElementById('hero-tagline').innerText = tagline;
+        document.getElementById('about-bio').innerText = bio;
+        document.getElementById('btn-discord-tag').innerText = discord;
         
-        // Populate Contact
-        document.getElementById('terminal-header-title').innerText = `${CONFIG.profile.handle}@laptop:~ (zsh)`;
-        document.getElementById('terminal-prompt').innerText = `${CONFIG.profile.handle}@laptop:~$`;
-        document.getElementById('contact-discord').innerText = CONFIG.profile.discord;
-        document.getElementById('contact-server-link').innerText = CONFIG.profile.discordServer.replace('https://', '');
-        document.getElementById('contact-server-link').href = CONFIG.profile.discordServer;
-        document.getElementById('join-server-btn').href = CONFIG.profile.discordServer;
-        document.getElementById('contact-github').innerText = CONFIG.profile.githubUrl.replace('https://', '');
-        document.getElementById('contact-github').href = CONFIG.profile.githubUrl;
-        document.getElementById('footer-handle').innerText = CONFIG.profile.handle;
+        document.getElementById('terminal-header-title').innerText = `${handle}@laptop:~ (zsh)`;
+        document.getElementById('terminal-prompt').innerText = `${handle}@laptop:~$`;
+        document.getElementById('contact-discord').innerText = discord;
+        document.getElementById('contact-server-link').innerText = discordServer.replace('https://', '');
+        document.getElementById('contact-server-link').href = discordServer;
+        document.getElementById('join-server-btn').href = discordServer;
+        document.getElementById('contact-github').innerText = githubUrl.replace('https://', '');
+        document.getElementById('contact-github').href = githubUrl;
+        document.getElementById('footer-handle').innerText = handle;
 
-        // Stats
+        // Stats Render
         const statsContainer = document.getElementById('stats-container');
-        CONFIG.stats.forEach(s => {
-            statsContainer.innerHTML += `
-                <div class="space-y-1">
-                    <div class="text-3xl sm:text-4xl font-extrabold font-mono text-sky-400">${s.number}</div>
-                    <div class="text-xs sm:text-sm text-slate-400 font-medium">${s.label}</div>
-                </div>`;
-        });
+        if (CONFIG.stats) {
+            CONFIG.stats.forEach(s => {
+                statsContainer.innerHTML += `
+                    <div class="space-y-1">
+                        <div class="text-3xl sm:text-4xl font-extrabold font-mono text-sky-400">${s.number}</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">${s.label}</div>
+                    </div>`;
+            });
+        }
 
-        // Skills
+        // Skills Render
         const skillsGrid = document.getElementById('skills-grid');
-        CONFIG.skills.forEach(s => {
-            skillsGrid.innerHTML += `
-                <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6">
-                            <i class="${s.icon}"></i>
+        if (CONFIG.skills) {
+            CONFIG.skills.forEach(s => {
+                skillsGrid.innerHTML += `
+                    <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6">
+                                <i class="${s.icon}"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">${s.title}</h4>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">${s.description}</p>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-3">${s.title}</h4>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">${s.description}</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                        ${s.tags.map(t => `<span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">${t}</span>`).join('')}
-                    </div>
-                </div>`;
-        });
-
-        // Experiences
-        const experiencesGrid = document.getElementById('experiences-grid');
-        CONFIG.experiences.forEach(e => {
-            experiencesGrid.innerHTML += `
-                <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">${e.badge}</span>
-                            <a href="${e.githubUrl}" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
-                        </div>
-                        <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">${e.title}</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${e.description}</p>
-                    </div>
-                    <div class="p-6 pt-0">
                         <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                            ${e.tags.map(t => `<span class="text-xs font-mono text-slate-400">${t}</span>`).join('')}
+                            ${s.tags.map(t => `<span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300 text-xs font-mono">${t}</span>`).join('')}
                         </div>
-                    </div>
-                </div>`;
-        });
+                    </div>`;
+            });
+        }
 
-        // Media Section Rendering (Grid or Fallback)
+        // Experiences Render
+        const experiencesGrid = document.getElementById('experiences-grid');
+        if (CONFIG.experiences) {
+            CONFIG.experiences.forEach(e => {
+                experiencesGrid.innerHTML += `
+                    <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono">${e.badge}</span>
+                                <a href="${e.githubUrl || '#'}" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                            </div>
+                            <h4 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mb-2">${e.title}</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">${e.description}</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
+                                ${e.tags.map(t => `<span class="text-xs font-mono text-slate-400">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        // Media Render (With Safe Fallback)
         const mediaContainer = document.getElementById('media-container');
         if (CONFIG.media && CONFIG.media.length > 0) {
             mediaContainer.className = "grid grid-cols-1 md:grid-cols-2 gap-8";
@@ -371,6 +403,7 @@
                     </div>`;
             });
         } else {
+            const fallbackText = CONFIG.mediaFallbackText || "7Frostt is preparing the media to proof of his previous works, so be patient. :)";
             mediaContainer.className = "glass-panel rounded-3xl p-8 sm:p-12 text-center border border-slate-800/80";
             mediaContainer.innerHTML = `
                 <div class="max-w-xl mx-auto space-y-4">
@@ -378,7 +411,7 @@
                         <i class="fa-solid fa-clapperboard"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white">Showcases Loading...</h4>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">${CONFIG.mediaFallbackText}</p>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">${fallbackText}</p>
                 </div>`;
         }
 
@@ -389,12 +422,12 @@
 
             const inputLine = document.createElement('div');
             inputLine.className = 'text-slate-300 mt-2';
-            inputLine.innerHTML = `<span class="text-emerald-400 font-bold">${CONFIG.profile.handle}@laptop:~$</span> ${cmd}`;
+            inputLine.innerHTML = `<span class="text-emerald-400 font-bold">${handle}@laptop:~$</span> ${cmd}`;
             termBody.appendChild(inputLine);
 
             if (cleanCmd === 'clear') {
                 termBody.innerHTML = `<div class="text-slate-400">Terminal cleared. Type <span class="text-emerald-400 font-bold">help</span> for commands.</div>`;
-            } else if (CONFIG.terminalCommands[cleanCmd]) {
+            } else if (CONFIG.terminalCommands && CONFIG.terminalCommands[cleanCmd]) {
                 const responseLine = document.createElement('div');
                 responseLine.className = 'text-slate-300 whitespace-pre-wrap pl-2 border-l-2 border-sky-500/50 my-1';
                 responseLine.innerHTML = CONFIG.terminalCommands[cleanCmd];
@@ -419,8 +452,8 @@
         }
 
         function copyDiscordHandle() {
-            navigator.clipboard.writeText(CONFIG.profile.discord);
-            alert(`Copied Discord handle (${CONFIG.profile.discord}) to clipboard!`);
+            navigator.clipboard.writeText(discord);
+            alert(`Copied Discord handle (${discord}) to clipboard!`);
         }
 
         function updateClock() {
@@ -434,44 +467,16 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Intersection Observer for Smooth Scroll Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Scroll Observer
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Live Visitor Counter API
-        async function fetchVisitorCount() {
-            try {
-                // calls counterapi to increment count for your portfolio
-                const res = await fetch('https://api.counterapi.dev/v1/7frostt-portfolio/visits/up');
-                const data = await res.json();
-                if (data && data.count !== undefined) {
-                    const viewElem = document.getElementById('live-views');
-                    if (viewElem) {
-                        viewElem.innerText = data.count.toLocaleString();
-                    }
-                }
-            } catch (err) {
-                console.log('counter api offline:', err);
-                const viewElem = document.getElementById('live-views');
-                if (viewElem) viewElem.innerText = '100+';
-            }
-        }
-
-        // Trigger visitor count fetch on load
-        fetchVisitorCount();
     </script>
 </body>
 </html>
